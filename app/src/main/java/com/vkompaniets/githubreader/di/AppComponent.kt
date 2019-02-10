@@ -1,7 +1,7 @@
 package com.vkompaniets.githubreader.di
 
-import com.vkompaniets.githubreader.ui.MainActivity
 import com.vkompaniets.githubreader.ui.search.SearchFragment
+import com.vkompaniets.githubreader.ui.user.UserDetailsFragment
 import dagger.Component
 import javax.inject.Singleton
 
@@ -9,6 +9,6 @@ import javax.inject.Singleton
 @Singleton
 interface AppComponent {
 
-    fun inject(mainActivity: MainActivity)
     fun inject(searchFragment: SearchFragment)
+    fun inject(userDetailsFragment: UserDetailsFragment)
 }

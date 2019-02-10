@@ -1,14 +1,22 @@
 package com.vkompaniets.githubreader.network
 
+import com.vkompaniets.githubreader.model.Repo
+import com.vkompaniets.githubreader.model.User
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Headers
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
 interface GithubService {
 
-    @Headers("Accept: application/vnd.github.v3.full+json")
     @GET("search/users")
     fun searchUsers(@Query("q") login: String): Call<UserSearchResponse>
+
+    @GET("users/{login}")
+    fun getUser(@Path("login") login: String): Call<User>
+
+    @GET("users/{login}/repos")
+    fun getRepos(@Path("login") login: String): Call<List<Repo>>
+
 }

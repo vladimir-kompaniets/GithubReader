@@ -15,7 +15,7 @@ class SearchResultsAdapter(private val listener: UserClickListener) : RecyclerVi
     private var items = emptyList<User>()
 
     override fun onCreateViewHolder(parent: ViewGroup, itemViewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.search_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.user_item, parent, false)
         return ViewHolder(view)
     }
 

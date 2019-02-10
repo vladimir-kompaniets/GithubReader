@@ -6,7 +6,7 @@ import android.arch.lifecycle.ViewModel
 import com.vkompaniets.githubreader.data.GithubDataSource
 import com.vkompaniets.githubreader.data.GithubRepository
 import com.vkompaniets.githubreader.model.User
-import com.vkompaniets.githubreader.util.UiResource
+import com.vkompaniets.githubreader.ui.UiResource
 import javax.inject.Inject
 
 class SearchViewModel @Inject constructor (private val githubRepository: GithubRepository): ViewModel(),

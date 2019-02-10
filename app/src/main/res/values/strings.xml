@@ -4,4 +4,9 @@
     <string name="search_label">Input username to know more:</string>
     <string name="search_hint">Github login</string>
     <string name="button_search">Search</string>
+    <string name="repo_label">Repositories</string>
+    <string name="name_company">%1$s, %2$s</string>
+    <string name="followers">Followers\n%1$d</string>
+    <string name="following">Following\n%1$d</string>
+
 </resources>

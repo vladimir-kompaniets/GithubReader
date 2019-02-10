@@ -3,17 +3,11 @@ package com.vkompaniets.githubreader.ui
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.vkompaniets.githubreader.R
-import com.vkompaniets.githubreader.di.ViewModelFactory
 import com.vkompaniets.githubreader.ui.search.SearchFragment
-import com.vkompaniets.githubreader.ui.search.SearchViewModel
+import com.vkompaniets.githubreader.ui.user.UserDetailsFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import javax.inject.Inject
 
 class MainActivity : AppCompatActivity(), MainNavigator {
-    @Inject
-    lateinit var viewModelFactory: ViewModelFactory
-
-    lateinit var searchViewModel: SearchViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +20,10 @@ class MainActivity : AppCompatActivity(), MainNavigator {
     }
 
     override fun showUserDetails(login: String) {
-
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.content, UserDetailsFragment.create(login))
+            .addToBackStack(null)
+            .commit()
     }
 
 
