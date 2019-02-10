@@ -12,6 +12,12 @@ class GithubReaderApp: Application() {
     override fun onCreate() {
         super.onCreate()
 
+        instance = this
         appComponent = DaggerAppComponent.create()
+    }
+
+    companion object {
+        lateinit var instance: GithubReaderApp
+            private set
     }
 }
