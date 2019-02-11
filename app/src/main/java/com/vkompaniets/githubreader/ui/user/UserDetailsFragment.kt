@@ -22,8 +22,6 @@ class UserDetailsFragment : Fragment() {
 
     private lateinit var viewModel: UserDetailsViewModel
 
-    private lateinit var adapter: ReposAdapter
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_user_details, container, false)
     }
@@ -38,7 +36,7 @@ class UserDetailsFragment : Fragment() {
             viewModel.loadData(arguments?.getString(ARG_USER_LOGIN) ?: throw IllegalArgumentException("User login must be provided"))
         }
 
-        adapter = ReposAdapter()
+        val adapter = ReposAdapter()
         repoList.adapter = adapter
 
         viewModel.userResult.observe(this, Observer { resource ->

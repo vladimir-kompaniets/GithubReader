@@ -25,8 +25,6 @@ class SearchFragment : Fragment(), SearchResultsAdapter.UserClickListener {
 
     private lateinit var viewModel: SearchViewModel
 
-    private lateinit var adapter: SearchResultsAdapter
-
     private lateinit var navigator: MainNavigator
 
     override fun onAttach(context: Context?) {
@@ -49,7 +47,7 @@ class SearchFragment : Fragment(), SearchResultsAdapter.UserClickListener {
             hideKeyboard(it.windowToken)
         }
 
-        adapter = SearchResultsAdapter(this)
+        val adapter = SearchResultsAdapter(this)
         userList.adapter = adapter
         userList.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
 
